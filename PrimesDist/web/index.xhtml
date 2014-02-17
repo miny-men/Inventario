@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Our Login</title>
+    </h:head>
+    <h:body style="background-image: url(back2.jpg);background-repeat:no-repeat;background-attachment:fixed; ">       
+        
+        <div  align="center" style="padding: 180px 0 0 280px;">
+        <f:view locale="center">
+            <h:form id="loginform" >
+                <p:panelGrid columns="2">
+                    <f:facet name="header">
+                        <h:outputText value="Login"/>
+                    </f:facet>
+                    <h:outputText value="Nombre Usuario"/>
+                    <p:inputText id="nombreUsuario"
+                                 value="#{usuarioMB.nombreUsuario}"/>
+                    <h:outputText value="Clave Usuario"/>
+                    <p:password id="claveUsuario"
+                                value="#{usuarioMB.claveUsuario}"/>
+                    <f:facet name="footer">
+                    <p:commandButton id="btnEntrar"
+                                     value="Entrar"
+                                     action="#{usuarioMB.login()}"/>
+                    </f:facet>
+                </p:panelGrid>
+            </h:form>
+        </f:view>
+            </div>
+            
+    </h:body>
+</html>
+

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Administrador</title>
+            </f:facet>
+            <h:outputStylesheet name="css/syntaxhighlighter/syntaxhighlighter.css"  />
+            <style type="text/css">
+                body {
+                    margin:0;
+                    padding: 0;
+                    background-color: #CEEEF6;
+                }
+            </style>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="125" resizable="true" closable="true" collapsible="true">
+                <p:dock position="top">
+                <p:menuitem value="Add" icon="add.png" url="#"/>
+                <p:menuitem value="Delete" icon="delete.png" url="#"/>
+                <p:menuitem value="Query" icon="query1.png" url="#"/>
+                <p:menuitem value="Update" icon="update.png" url="#"/>
+                <p:menuitem value="Logout" icon="logout1.png" url="index.xhtml"/>
+                </p:dock>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Our Datas
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Menú" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Resources">
+                            <p:menuitem value="Add" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                            <p:menuitem value="Deletes" url="http://www.primefaces.org/documentation.html" />
+                            <p:menuitem value="Querys" url="http://forum.primefaces.org/" />
+                            <p:menuitem value="Updates" url="http://www.primefaces.org/themes.html" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    Welcome to PrimeFaces
+                  <h:form id="form">  
+                       
+                           
+                                 <h:outputText value="ALTA DE: " />  
+                                 <p:selectOneMenu value="#{buttonBean.number}">  
+                                 <f:selectItem itemLabel="Selecciona uno" itemValue="" />  
+                                 <f:selectItem itemLabel="Ubicación" itemValue="1" />  
+                                 <f:selectItem itemLabel="Usuario" itemValue="2" />  
+                                 <f:selectItem itemLabel="Hardware" itemValue="3" />  
+                                 <f:selectItem itemLabel="Software" itemValue="5" />  
+                                 <f:selectItem itemLabel="Categoria" itemValue="6" />  
+                                 <f:selectItem itemLabel="Perfil" itemValue="7" />  
+                                 <f:selectItem itemLabel="Area" itemValue="8" />  
+                                 <f:selectItem itemLabel="Piso" itemValue="9" />  
+                                 <f:selectItem itemLabel="Edificio" itemValue="10" />  
+                                 </p:selectOneMenu>
+                                 <br></br>
+                                 <table style="color:white">
+                                     <tr>
+                                         <td><h:outputText value="Empleado: " /></td>
+                                         <td><p:inputText id="idempleado" value="#{pprBean.firstname}">  
+                                 <p:ajax event="keyup" update="out1" />  
+                                         </p:inputText></td>  
+                                 <h:outputText id="out1" value="#{pprBean.firstname}" />
+                                 <br></br>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="ID RED:" />  </td>
+                                        <td> <p:inputText id="surname" value="#{pprBean.surname}">  
+                                 <p:ajax event="blur" update="out2" />  
+                                        </p:inputText>  </td>
+                                 <h:outputText id="out2" value="#{pprBean.surname}" /> 
+                                 </tr>
+                                 </table>
+                      
+                  </h:form>  
+               </p:layoutUnit>
+                <p:layoutUnit position="east" size="175" header="Otros Recursos" collapsible="true">
+                    <p:menu>
+                        <p:submenu>
+                            <p:menuitem value="Facebook" url="#"/>
+                        </p:submenu>
+                    </p:menu>
+                </p:layoutUnit>
+        </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+

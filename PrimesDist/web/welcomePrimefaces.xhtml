@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>PrimeFacesDistribuidos</title>
+    </h:head>
+    <h:body>
+        <p:layoutUnit position="center">
+            <p:dataTable value="#{usuarioMB.lista}"
+                         var="listaUsuarios" paginator="true" rows="10"
+                         paginatorTemplate="{CurrentPageReport}
+                         {FirstPageLink} {PreviousPageLink} {PageLinks}
+                         {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" >
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Clave de Usuario"/>
+                    </f:facet>
+                    <h:outputText 
+                        value="#{listaUsuarios.idUsuario}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nombre de Usuario"/>
+                    </f:facet>
+                    <h:outputText 
+                        value="#{listaUsuarios.nombreUsuario}"/>
+                </p:column>
+            </p:dataTable>
+        </p:layoutUnit>
+    </h:body>
+</html>

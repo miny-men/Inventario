@@ -1,0 +1,9 @@
+create database demo;
+
+create table usuario(
+idUsuario int not null primary key,
+nombreUsuario varchar(25),
+claveUsuario varchar(25));
+
+insert into usuario(idUsuario,nombreUsuario,claveUsuario)
+values(1,'COLOCARUNNOMBRE','1234');
